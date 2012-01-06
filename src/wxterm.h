@@ -1,6 +1,8 @@
 /*
     taTelnet - A cross-platform telnet program.
-    Copyright (c) 2000 Derry Bryson.
+    Copyright (c) 2000 Derry Bryson
+                  2004 Mark Erikson
+                  2012 Jeremy Salwen
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,6 +28,7 @@
 
        derry@techass.com
 */
+
 
 #ifndef INCLUDE_WXTERM
 #define INCLUDE_WXTERM

@@ -1,5 +1,23 @@
+/*
+TerminalWx - A wxWidgets terminal widget
+Copyright (C) 1999  Derry Bryson
+              2004  Mark Erikson
+              2012  Jeremy Salwen
 
-// Copyright Derry Bryson, 1999
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
 
 #ifndef INCLUDED_GTELNET_H
 #define INCLUDED_GTELNET_H
@@ -36,17 +54,17 @@ public:
     DO = 253,        // do option
     DONT = 254       // don't do option
   } TELNET_CMDS;
-        
+
   enum
   {
     TRANSMIT_BINARY = 0,        // RFC 856
     TERMINAL_TYPE = 24          // RFC 884
   } TELNET_OPTIONS;
-  
+
 private:
-  typedef void 
+  typedef void
     (GTelnet::*StateFunc)();
-  
+
   typedef struct Option
   {
     int byte;	// char value to look for; -1==end/default
@@ -63,8 +81,8 @@ private:
   int telnet_process_data;
   char *telnet_termid;
   unsigned char *telnet_input_data;
-        
-  // 
+
+  //
   //  Define state tables
   //
   static StateOption telnet_normal_state[];
@@ -73,7 +91,7 @@ private:
   static StateOption telnet_do_state[];
   static StateOption telnet_will_state[];
   static StateOption telnet_dont_state[];
-  
+
   //
   //  Define Actions
   //
@@ -85,7 +103,7 @@ private:
   void telnet_will(void);
   void telnet_dont(void);
   void telnet_wont(void);
-          
+
 public:
   GTelnet(int w, int h);
   virtual ~GTelnet();
@@ -95,10 +113,10 @@ public:
   virtual void ProcessOutput(int len, unsigned char *data);
   virtual void ModeChange(int state);
   virtual void Reset();
-    
+
   void SetTermID(char *termId);
   char *GetTermID(void) { return telnet_termid; }
-  
+
   void SendDo(int cmd);
   void SendWill(int cmd);
   void SendDont(int cmd);

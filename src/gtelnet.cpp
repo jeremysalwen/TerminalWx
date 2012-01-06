@@ -1,9 +1,29 @@
+/*
+TerminalWx - A wxWidgets terminal widget
+Copyright (C) 1999  Derry Bryson
+              2004  Mark Erikson
+              2012  Jeremy Salwen
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+*/
+
 /* GRG: Added a lot of GTelnet:: prefixes to correctly form pointers
  *   to functions in all the tables. Example:
  *   &telnet_iac -> &GTelnet::telnet_iac
  */
 
-// Copyright (c) Derry Bryson, 1999
 
 #ifdef __GNUG__
     #pragma implementation "gtelnet.hpp"
@@ -18,8 +38,8 @@ GTelnet::StateOption GTelnet::telnet_normal_state[] =
   { IAC,         &GTelnet::telnet_iac,         telnet_cmd_state },
   { -1,          0,                   telnet_normal_state }
 };
-  
-GTelnet::StateOption GTelnet::telnet_cmd_state[] = 
+
+GTelnet::StateOption GTelnet::telnet_cmd_state[] =
 {
   { IAC,         &GTelnet::telnet_binary_iac,  telnet_normal_state },
   { NOP,         &GTelnet::telnet_eat,         telnet_normal_state },
@@ -37,7 +57,7 @@ GTelnet::StateOption GTelnet::telnet_cmd_state[] =
   { DO,          &GTelnet::telnet_cmd,         telnet_do_state },
   { DONT,        &GTelnet::telnet_cmd,         telnet_dont_state },
   { -1,          &GTelnet::telnet_eat,         telnet_normal_state }
-};        
+};
 
 GTelnet::StateOption GTelnet::telnet_sub_state[] =
 {
@@ -167,15 +187,15 @@ GTelnet::SetTermID(char *termId)
   telnet_termid = strdup(termId);
 }
 
-void 
+void
 GTelnet::telnet_iac(void)
 {
 //printf("telnet_iac() called...\n");
   telnet_process_data = 0;
-//printf("telnet_iac() exited...\n");    
+//printf("telnet_iac() exited...\n");
 }
 
-void 
+void
 GTelnet::telnet_binary_iac(void)
 {
 //printf("telnet_binary_iac() called...\n");
@@ -190,7 +210,7 @@ GTelnet::telnet_eat(void)
   telnet_process_data = 0;
 }
 
-void 
+void
 GTelnet::telnet_cmd(void)
 {
 //printf("telnet_cmd() called with %d...\n", *telnet_input_data);
@@ -205,11 +225,11 @@ GTelnet::telnet_do(void)
   unsigned char
     buf[4];
 
-//printf("GTelnet::telnet_do(): ");    
+//printf("GTelnet::telnet_do(): ");
   switch(*telnet_input_data)
   {
     case TERMINAL_TYPE :
-//printf("sending terminal type...\n");    
+//printf("sending terminal type...\n");
       buf[0] = IAC;
       buf[1] = WILL;
       buf[2] = TERMINAL_TYPE;
@@ -224,9 +244,9 @@ GTelnet::telnet_do(void)
       buf[1] = SE;
       ProcessOutput(2, buf);
     break;
-   
+
     case TRANSMIT_BINARY :
-//printf("enabling binary recv mode...\n");    
+//printf("enabling binary recv mode...\n");
       telnet_binary_recv = 1;
     break;
   }
@@ -240,7 +260,7 @@ GTelnet::telnet_will(void)
   switch(*telnet_input_data)
   {
     case TRANSMIT_BINARY :
-//printf("sending do binary...\n");    
+//printf("sending do binary...\n");
       if(!telnet_binary_recv)
         SendWill(TRANSMIT_BINARY);
       if(!telnet_binary_send)
@@ -253,7 +273,7 @@ GTelnet::telnet_will(void)
   telnet_process_data = 0;
 }
 
-void 
+void
 GTelnet::telnet_dont(void)
 {
   switch(*telnet_input_data)
@@ -265,33 +285,33 @@ GTelnet::telnet_dont(void)
   telnet_process_data = 0;
 }
 
-void 
+void
 GTelnet::telnet_wont(void)
 {
 //printf("telnet_wont() called (%d)...\n", *telnet_input_data);
   SendWont(*telnet_input_data);
   telnet_process_data = 0;
-//printf("telnet_wont() exited...\n");  
+//printf("telnet_wont() exited...\n");
 }
 
-void 
+void
 GTelnet::SendDo(int cmd)
 {
   unsigned char
     buf[3];
-    
+
   buf[0] = IAC;
   buf[1] = DO;
   buf[2] = cmd;
   SendBack(3, (char *)buf);
 }
 
-void 
+void
 GTelnet::SendWill(int cmd)
 {
   unsigned char
     buf[3];
-    
+
   buf[0] = IAC;
   buf[1] = WILL;
   buf[2] = cmd;
@@ -303,7 +323,7 @@ GTelnet::SendDont(int cmd)
 {
   unsigned char
     buf[3];
-    
+
   buf[0] = IAC;
   buf[1] = DONT;
   buf[2] = cmd;
@@ -315,7 +335,7 @@ GTelnet::SendWont(int cmd)
 {
   unsigned char
     buf[3];
-    
+
   buf[0] = IAC;
   buf[1] = WONT;
   buf[2] = cmd;

@@ -1,6 +1,8 @@
 /*
     taTelnet - A cross-platform telnet program.
-    Copyright (c) 2000 Derry Bryson.
+    Copyright (c) 2000 Derry Bryson
+                  2004 Mark Erikson
+                  2012 Jeremy Salwen
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -62,7 +64,6 @@
 #include "wxterm.h"
 
 
-void WinMessageBeep();
 
 #define CURSOR_BLINK_DEFAULT_TIMEOUT	300
 #define CURSOR_BLINK_MAX_TIMEOUT	2000
