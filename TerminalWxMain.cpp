@@ -13,6 +13,7 @@
  **************************************************************/
 
 #include "TerminalWxMain.h"
+#include "src/terminalinputevent.h"
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(TerminalWxFrame)
@@ -68,7 +69,7 @@ TerminalWxFrame::TerminalWxFrame(wxWindow* parent,wxWindowID id)
     wxMenu* Menu2;
 
     Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-    Term1 = new wxTerm(this,ID_TERM,wxPoint(72,56),80,24,_T("ID_TERM"));
+    Term1 = new SimpleTerminal(this,ID_TERM,wxPoint(72,56),80,24,_T("ID_TERM"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);
@@ -108,11 +109,12 @@ void TerminalWxFrame::OnAbout(wxCommandEvent& event)
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
 
-    unsigned char what[10]="Hey!!!!";
-    Term1->ProcessInput(7,what);
+    TerminalInputEvent* e=new TerminalInputEvent();
+    e->SetString("Sup!");
+    Term1->GetEventHandler()->QueueEvent(e);
 }
 
 void TerminalWxFrame::OnClose(wxCloseEvent& event)
 {
- Destroy();
+    Destroy();
 }

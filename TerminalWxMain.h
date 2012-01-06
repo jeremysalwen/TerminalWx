@@ -20,7 +20,7 @@
 #include <wx/frame.h>
 //*)
 
-#include "src/wxterm.h"
+#include "src/simpleterminal.h"
 
 class TerminalWxFrame: public wxFrame
 {
@@ -46,8 +46,8 @@ class TerminalWxFrame: public wxFrame
         //*)
 
         //(*Declarations(TerminalWxFrame)
+        SimpleTerminal* Term1;
         wxStatusBar* StatusBar1;
-        wxTerm* Term1;
         //*)
 
         DECLARE_EVENT_TABLE()

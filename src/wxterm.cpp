@@ -1,16 +1,3 @@
-// *** ADDED BY HEADER FIXUP ***
-#include <wx/bitmap.h>
-#include <wx/brush.h>
-#include <wx/cursor.h>
-#include <wx/dcclient.h>
-#include <wx/log.h>
-#include <wx/pen.h>
-#include <wx/settings.h>
-#include <wx/utils.h>
-// *** END ***
-
-
-
 /*
     taTelnet - A cross-platform telnet program.
     Copyright (c) 2000 Derry Bryson.
@@ -59,6 +46,15 @@
 
 #include <wx/timer.h>
 #include <wx/event.h>
+#include <wx/bitmap.h>
+#include <wx/brush.h>
+#include <wx/cursor.h>
+#include <wx/dcclient.h>
+#include <wx/log.h>
+#include <wx/pen.h>
+#include <wx/settings.h>
+#include <wx/utils.h>
+
 #include <ctype.h>
 
 #include "gterm.hpp"

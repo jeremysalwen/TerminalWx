@@ -2,8 +2,9 @@
 <wxsmith>
 	<object class="wxFrame" name="TerminalWxFrame">
 		<handler function="OnClose" entry="EVT_CLOSE" />
-		<object class="Custom" name="ID_TERM" subclass="wxTerm" variable="Term1" member="yes">
+		<object class="Custom" name="ID_TERM" subclass="SimpleTerminal" variable="Term1" member="yes">
 			<creating_code>$(THIS) = new $(CLASS)($(PARENT),$(ID),$(POS),80,24,$(NAME));</creating_code>
+			<style></style>
 			<pos>72,56</pos>
 		</object>
 		<object class="wxMenuBar" variable="MenuBar1" member="no">
