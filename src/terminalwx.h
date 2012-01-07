@@ -17,8 +17,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#ifndef SIMPLETERMINAL_H
-#define SIMPLETERMINAL_H
+#ifndef TERMINALWX_H
+#define TERMINALWX_H
 
 #include "taTelnet/wxterm.h"
 #include "terminalinputevent.h"
@@ -29,14 +29,14 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  *  To handle user input to the terminal, inherit this
  *  class and override the OnUserInput
  */
-class SimpleTerminal : public wxTerm
+class TerminalWx : public wxTerm
 {
 public:
-    SimpleTerminal(wxWindow* parent, wxWindowID id,
+    TerminalWx(wxWindow* parent, wxWindowID id,
                    const wxPoint& pos = wxDefaultPosition,
                    int width = 80, int height = 24,
-                   const wxString& name = "simpleTerm");
-    virtual ~SimpleTerminal();
+                   const wxString& name = "TerminalWx");
+    virtual ~TerminalWx();
     virtual void OnUserInput(wxString);
     virtual void DisplayChars(const wxString& text);
     virtual void DisplayCharsUnsafe(const wxString& text);
@@ -48,4 +48,4 @@ private:
   DECLARE_EVENT_TABLE()
 };
 
-#endif // SIMPLETERMINAL_H
+#endif // TERMINALWX_H

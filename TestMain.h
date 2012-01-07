@@ -17,8 +17,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#ifndef TERMINALWXMAIN_H
-#define TERMINALWXMAIN_H
+#ifndef TESTMAIN_H
+#define TESTMAIN_H
 
 //(*Headers(TerminalWxFrame)
 #include <wx/menu.h>
@@ -29,7 +29,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <wx/event.h>
 #include <wx/window.h>
 
-#include "src/simpleterminal.h"
+#include "src/terminalwx.h"
 
 class TerminalWxFrame: public wxFrame
 {
@@ -55,8 +55,8 @@ class TerminalWxFrame: public wxFrame
         //*)
 
         //(*Declarations(TerminalWxFrame)
-        SimpleTerminal* Term1;
         wxStatusBar* StatusBar1;
+        TerminalWx* Term1;
         //*)
 
         DECLARE_EVENT_TABLE()

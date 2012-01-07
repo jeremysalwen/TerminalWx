@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="TerminalWxFrame">
+		<title>Test TerminalWx App</title>
 		<handler function="OnClose" entry="EVT_CLOSE" />
-		<object class="Custom" name="ID_TERM" subclass="SimpleTerminal" variable="Term1" member="yes">
+		<object class="Custom" name="ID_TERM" subclass="TerminalWx" variable="Term1" member="yes">
 			<creating_code>$(THIS) = new $(CLASS)($(PARENT),$(ID),$(POS),80,24,$(NAME));</creating_code>
 			<style></style>
 			<pos>72,56</pos>

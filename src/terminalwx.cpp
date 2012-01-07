@@ -17,7 +17,7 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#include "simpleterminal.h"
+#include "terminalwx.h"
 
 #include <wx/log.h>
 /**
@@ -31,7 +31,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
         internally, and might be changed by VT commands.
 
 */
-SimpleTerminal::SimpleTerminal(wxWindow* parent, wxWindowID id,
+TerminalWx::TerminalWx(wxWindow* parent, wxWindowID id,
                                const wxPoint& pos,
                                int width, int height,
                                const wxString& name):  wxTerm(parent,id,pos,width,height,name)
@@ -42,15 +42,15 @@ SimpleTerminal::SimpleTerminal(wxWindow* parent, wxWindowID id,
     Called whenever the user has input additional text.
         By default it does nothing.
 */
-void SimpleTerminal::OnUserInput(wxString input) {
+void TerminalWx::OnUserInput(wxString input) {
     wxLogDebug("GotInput! %s",input);
     //By default do nothing.
 }
 
-void SimpleTerminal::SendBack(int len,char* data) {
+void TerminalWx::SendBack(int len,char* data) {
     OnUserInput(wxString(data,len));
 }
-void SimpleTerminal::SendBack(char* data) {
+void TerminalWx::SendBack(char* data) {
     OnUserInput(wxString(data));
 }
 /**
@@ -59,7 +59,7 @@ void SimpleTerminal::SendBack(char* data) {
  *  This function is thread safe and can be called from any thread at any time.
  *
 */
-void SimpleTerminal::DisplayChars(const wxString& str) {
+void TerminalWx::DisplayChars(const wxString& str) {
      this->QueueEvent(new TerminalInputEvent(str));
 }
 
@@ -69,22 +69,22 @@ void SimpleTerminal::DisplayChars(const wxString& str) {
  *  This function is not thread safe and can *only*
  *  safely be called from the main event loop
 */
-void SimpleTerminal::DisplayCharsUnsafe(const wxString& str) {
+void TerminalWx::DisplayCharsUnsafe(const wxString& str) {
      ProcessInput(str.length(),(unsigned char*)const_cast<char*>((const char*)str.mb_str()));
 }
 
-void SimpleTerminal::OnTerminalInput(TerminalInputEvent& evt) {
+void TerminalWx::OnTerminalInput(TerminalInputEvent& evt) {
     DisplayCharsUnsafe(evt.GetString());
 }
 
-SimpleTerminal::~SimpleTerminal()
+TerminalWx::~TerminalWx()
 {
     //dtor
 }
 
 
-wxBEGIN_EVENT_TABLE(SimpleTerminal, wxTerm)
+wxBEGIN_EVENT_TABLE(TerminalWx, wxTerm)
 
-EVT_TERMINAL_INPUT(SimpleTerminal::OnTerminalInput)
+EVT_TERMINAL_INPUT(TerminalWx::OnTerminalInput)
 
 wxEND_EVENT_TABLE()

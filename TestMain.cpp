@@ -22,7 +22,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include <wx/utils.h>
 #include <wx/msgdlg.h>
 
-#include "TerminalWxMain.h"
+#include "TestMain.h"
 #include "src/terminalinputevent.h"
 
 //(*InternalHeaders(TerminalWxFrame)
@@ -77,8 +77,8 @@ TerminalWxFrame::TerminalWxFrame(wxWindow* parent,wxWindowID id)
     wxMenuBar* MenuBar1;
     wxMenu* Menu2;
 
-    Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-    Term1 = new SimpleTerminal(this,ID_TERM,wxPoint(72,56),80,24,_T("ID_TERM"));
+    Create(parent, id, _("Test TerminalWx App"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+    Term1 = new TerminalWx(this,ID_TERM,wxPoint(72,56),80,24,_T("ID_TERM"));
     MenuBar1 = new wxMenuBar();
     Menu1 = new wxMenu();
     MenuItem1 = new wxMenuItem(Menu1, idMenuQuit, _("Quit\tAlt-F4"), _("Quit the application"), wxITEM_NORMAL);

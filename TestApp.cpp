@@ -17,15 +17,27 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
 
-#ifndef TERMINALWXAPP_H
-#define TERMINALWXAPP_H
+#include "TestApp.h"
 
-#include <wx/app.h>
+//(*AppHeaders
+#include "TestMain.h"
+#include <wx/image.h>
+//*)
 
-class TerminalWxApp : public wxApp
+IMPLEMENT_APP(TestApp);
+
+bool TestApp::OnInit()
 {
-    public:
-        virtual bool OnInit();
-};
+    //(*AppInitialize
+    bool wxsOK = true;
+    wxInitAllImageHandlers();
+    if ( wxsOK )
+    {
+    	TerminalWxFrame* Frame = new TerminalWxFrame(0);
+    	Frame->Show();
+    	SetTopWindow(Frame);
+    }
+    //*)
+    return wxsOK;
 
-#endif // TERMINALWXAPP_H
+}
