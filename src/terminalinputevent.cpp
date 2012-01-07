@@ -23,8 +23,8 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 DEFINE_EVENT_TYPE(chEVT_TERMINAL_INPUT)
 
-TerminalInputEvent::TerminalInputEvent()
-	: wxEvent(0, chEVT_TERMINAL_INPUT)
+TerminalInputEvent::TerminalInputEvent(wxString str)
+	: wxEvent(0, chEVT_TERMINAL_INPUT),m_string(str)
 {
 	//
 }

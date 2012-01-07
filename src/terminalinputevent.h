@@ -32,7 +32,7 @@ DECLARE_EVENT_TYPE(chEVT_TERMINAL_INPUT, wxID_ANY)
 class TerminalInputEvent : public wxEvent
 {
 	public:
-		TerminalInputEvent();
+		TerminalInputEvent(wxString str);
 		TerminalInputEvent(const TerminalInputEvent& event);
 
 		void SetString(wxString s) { m_string = s; }
