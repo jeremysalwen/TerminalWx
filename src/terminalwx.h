@@ -23,11 +23,33 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #include "taTelnet/wxterm.h"
 #include "terminalinputevent.h"
 
+/*! \mainpage TerminalWx
+ *
+ * \section intro_sec Introduction
+ *
+ * TerminalWx is a fully VT100 compatible virtual terminal widget for wxWindows
+ *
+ * The code is almost entirely from the Chameleon IDE by Mark Erikson,
+ *  taTelnet by Derry Bryson, and GTerm by Timothy Miller.
+ *
+ * \section install_sec Use
+ *
+ * The public API for TerminalWx is the class TerminalWx.
+ *  It is a wxWindow.  Simply add it to your gui as you would any other widget.
+ *
+ *
+ */
+
+
 /**
  *  Terminal Widget
  *
  *  To handle user input to the terminal, inherit this
  *  class and override the OnUserInput
+ *
+ *  To make the widget display new characters sent from your backend,
+ *  use DisplayChars (or you may use DisplayCharsUnsafe, if you are
+ *  calling from within the main event loop.
  */
 class TerminalWx : public wxTerm
 {
