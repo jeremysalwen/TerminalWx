@@ -118,8 +118,7 @@ void TerminalWxFrame::OnAbout(wxCommandEvent& event)
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
 
-    TerminalInputEvent* e=new TerminalInputEvent(wxString("Sup! ")+((char)27)+"[30;47m haha");
-    Term1->GetEventHandler()->QueueEvent(e);
+    Term1->DisplayCharsUnsafe(msg);
 }
 
 void TerminalWxFrame::OnClose(wxCloseEvent& event)

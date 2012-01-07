@@ -53,7 +53,7 @@
 
 #include <ctype.h>
 
-#include "gterm.hpp"
+#include "../GTerm/gterm.hpp"
 #include "wxterm.h"
 
 
@@ -1605,11 +1605,7 @@ wxTerm::ModeChange(int state)
 void
 wxTerm::Bell()
 {
-#ifdef __WIN32__
-  WinMessageBeep();
-#else
   wxBell();
-#endif
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -1682,8 +1678,8 @@ void wxTerm::UpdateSize()
 ///  public virtual ResizeTerminal
 ///  <Resizes the terminal to a given number of characters high and wide
 ///
-///  @param  w    int  The new number of characters wide
-///  @param  h    int  The new number of characters high
+///  @param  width    int  The new number of characters wide
+///  @param  height    int  The new number of characters high
 ///
 ///  @return void
 ///
@@ -1819,7 +1815,7 @@ wxTerm::MapKeyCode(int keyCode)
 
 //////////////////////////////////////////////////////////////////////////////
 ///  public virtual SelectPrinter
-///  Not really sure... certainly not used in anything Chameleon needs
+///  Selects the printer to be used
 ///
 ///  @param  PrinterName char * The text of the printer name
 ///
@@ -1859,7 +1855,7 @@ wxTerm::SelectPrinter(char *PrinterName)
 
 //////////////////////////////////////////////////////////////////////////////
 ///  public virtual PrintChars
-///  Prints stuff to a printer.
+///  Prints stuff to the currently selected printer
 ///
 ///  @param  len  int             The number of characters
 ///  @param  data unsigned char * The text

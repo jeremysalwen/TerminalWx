@@ -37,7 +37,7 @@
 #pragma interface
 #endif
 
-#include "gterm.hpp"
+#include "../GTerm/gterm.hpp"
 #include <wx/dcmemory.h>
 #include <wx/timer.h>
 #include <wx/colour.h>

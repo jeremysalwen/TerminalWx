@@ -20,8 +20,15 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #ifndef SIMPLETERMINAL_H
 #define SIMPLETERMINAL_H
 
-#include "wxterm.h"
+#include "taTelnet/wxterm.h"
 #include "terminalinputevent.h"
+
+/**
+ *  Terminal Widget
+ *
+ *  To handle user input to the terminal, inherit this
+ *  class and override the OnUserInput
+ */
 class SimpleTerminal : public wxTerm
 {
 public:
@@ -30,11 +37,14 @@ public:
                    int width = 80, int height = 24,
                    const wxString& name = "simpleTerm");
     virtual ~SimpleTerminal();
-    virtual void SendBack(int len, char* data);
-    void OnTerminalInput(TerminalInputEvent&);
+    virtual void OnUserInput(wxString);
+    virtual void DisplayChars(const wxString& text);
+    virtual void DisplayCharsUnsafe(const wxString& text);
 protected:
 private:
-
+  void OnTerminalInput(TerminalInputEvent&);
+  virtual void SendBack(int len, char* data);
+  virtual void SendBack(char* data);
   DECLARE_EVENT_TABLE()
 };
 
