@@ -1799,7 +1799,9 @@ wxTerm::ProcessInput(int len, unsigned char *data)
 
 //////////////////////////////////////////////////////////////////////////////
 ///  private MapKeyCode
-///  Does some sort of character lookup
+///  Converts from WXWidgets special keycodes to VT100
+///  special keycodes.
+///
 ///
 ///  @param  keyCode int  The keycode to check
 ///
@@ -1861,7 +1863,7 @@ wxTerm::SelectPrinter(char *PrinterName)
 
 //////////////////////////////////////////////////////////////////////////////
 ///  public virtual PrintChars
-///  Prints stuff (to a file?), apparently
+///  Prints stuff to a printer.
 ///
 ///  @param  len  int             The number of characters
 ///  @param  data unsigned char * The text
@@ -1937,7 +1939,7 @@ void wxTerm::OnActivate(wxActivateEvent &event)
 void wxTerm::OnGainFocus(wxFocusEvent &event)
 {
 	this->clear_mode_flag(CURSORINVISIBLE);
-	wxLogDebug("Gained focus");
+	wxLogDebug("TerminalWx Gained focus");
 	GTerm::Update();
 }
 
@@ -1954,7 +1956,7 @@ void wxTerm::OnGainFocus(wxFocusEvent &event)
 void wxTerm::OnLoseFocus(wxFocusEvent &event)
 {
 	this->set_mode_flag(CURSORINVISIBLE);
-	wxLogDebug("Lost focus");
+	wxLogDebug("TerminalWx Lost focus");
 	GTerm::Update();
 }
 
