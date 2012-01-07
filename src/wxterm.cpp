@@ -60,7 +60,7 @@
 #include <ctype.h>
 
 #include "gterm.hpp"
-#include "gtelnet.hpp"
+//#include "GTerm.hpp"
 #include "wxterm.h"
 
 
@@ -73,51 +73,51 @@
 */
 wxTerm::TermKeyMap wxTerm::keyMapTable[] =
 {
-  { WXK_BACK, GTelnet::KEY_BACK },
-  { WXK_TAB, GTelnet::KEY_TAB },
-  { WXK_RETURN, GTelnet::KEY_RETURN },
-  { WXK_ESCAPE, GTelnet::KEY_ESCAPE },
-  { WXK_SPACE, GTelnet::KEY_SPACE },
-  { WXK_LEFT, GTelnet::KEY_LEFT },
-  { WXK_UP, GTelnet::KEY_UP },
-  { WXK_RIGHT, GTelnet::KEY_RIGHT },
-  { WXK_DOWN, GTelnet::KEY_DOWN },
-//  { WXK_DIVIDE, GTelnet::KEY_DIVIDE },
-//  { WXK_MULTIPLY, GTelnet::KEY_MULTIPLY },
-//  { WXK_SUBTRACT, GTelnet::KEY_SUBTRACT },
-//  { WXK_ADD, GTelnet::KEY_ADD },
-  { WXK_HOME, GTelnet::KEY_HOME },
-  { WXK_END, GTelnet::KEY_END },
-  { WXK_PAGEUP, GTelnet::KEY_PAGEUP },
-  { WXK_PAGEDOWN, GTelnet::KEY_PAGEDOWN },
-  { WXK_INSERT, GTelnet::KEY_INSERT },
-  { WXK_DELETE, GTelnet::KEY_DELETE },
-//  { WXK_NEXT, GTelnet::KEY_NEXT },
-//  { WXK_PRIOR, GTelnet::KEY_PRIOR },
-//  { WXK_NUMPAD0, GTelnet::KEY_NUMPAD0 },
-//  { WXK_NUMPAD1, GTelnet::KEY_NUMPAD1 },
-//  { WXK_NUMPAD2, GTelnet::KEY_NUMPAD2 },
-//  { WXK_NUMPAD3, GTelnet::KEY_NUMPAD3 },
-//  { WXK_NUMPAD4, GTelnet::KEY_NUMPAD4 },
-//  { WXK_NUMPAD5, GTelnet::KEY_NUMPAD5 },
-//  { WXK_NUMPAD6, GTelnet::KEY_NUMPAD6 },
-//  { WXK_NUMPAD7, GTelnet::KEY_NUMPAD7 },
-//  { WXK_NUMPAD8, GTelnet::KEY_NUMPAD8 },
-//  { WXK_NUMPAD9, GTelnet::KEY_NUMPAD9 },
-//  { WXK_DECIMAL, GTelnet::KEY_NUMPAD_DECIMAL },
-  { WXK_F1, GTelnet::KEY_F1 },
-  { WXK_F2, GTelnet::KEY_F2 },
-  { WXK_F3, GTelnet::KEY_F3 },
-  { WXK_F4, GTelnet::KEY_F4 },
-  { WXK_F5, GTelnet::KEY_F5 },
-  { WXK_F6, GTelnet::KEY_F6 },
-  { WXK_F7, GTelnet::KEY_F7 },
-  { WXK_F8, GTelnet::KEY_F8 },
-  { WXK_F9, GTelnet::KEY_F9 },
-  { WXK_F10, GTelnet::KEY_F10 },
-  { WXK_F11, GTelnet::KEY_F11 },
-  { WXK_F12, GTelnet::KEY_F12 },
-  { (wxKeyCode)0, GTelnet::KEY_NULL }
+  { WXK_BACK, GTerm::KEY_BACK },
+  { WXK_TAB, GTerm::KEY_TAB },
+  { WXK_RETURN, GTerm::KEY_RETURN },
+  { WXK_ESCAPE, GTerm::KEY_ESCAPE },
+  { WXK_SPACE, GTerm::KEY_SPACE },
+  { WXK_LEFT, GTerm::KEY_LEFT },
+  { WXK_UP, GTerm::KEY_UP },
+  { WXK_RIGHT, GTerm::KEY_RIGHT },
+  { WXK_DOWN, GTerm::KEY_DOWN },
+//  { WXK_DIVIDE, GTerm::KEY_DIVIDE },
+//  { WXK_MULTIPLY, GTerm::KEY_MULTIPLY },
+//  { WXK_SUBTRACT, GTerm::KEY_SUBTRACT },
+//  { WXK_ADD, GTerm::KEY_ADD },
+  { WXK_HOME, GTerm::KEY_HOME },
+  { WXK_END, GTerm::KEY_END },
+  { WXK_PAGEUP, GTerm::KEY_PAGEUP },
+  { WXK_PAGEDOWN, GTerm::KEY_PAGEDOWN },
+  { WXK_INSERT, GTerm::KEY_INSERT },
+  { WXK_DELETE, GTerm::KEY_DELETE },
+//  { WXK_NEXT, GTerm::KEY_NEXT },
+//  { WXK_PRIOR, GTerm::KEY_PRIOR },
+//  { WXK_NUMPAD0, GTerm::KEY_NUMPAD0 },
+//  { WXK_NUMPAD1, GTerm::KEY_NUMPAD1 },
+//  { WXK_NUMPAD2, GTerm::KEY_NUMPAD2 },
+//  { WXK_NUMPAD3, GTerm::KEY_NUMPAD3 },
+//  { WXK_NUMPAD4, GTerm::KEY_NUMPAD4 },
+//  { WXK_NUMPAD5, GTerm::KEY_NUMPAD5 },
+//  { WXK_NUMPAD6, GTerm::KEY_NUMPAD6 },
+//  { WXK_NUMPAD7, GTerm::KEY_NUMPAD7 },
+//  { WXK_NUMPAD8, GTerm::KEY_NUMPAD8 },
+//  { WXK_NUMPAD9, GTerm::KEY_NUMPAD9 },
+//  { WXK_DECIMAL, GTerm::KEY_NUMPAD_DECIMAL },
+  { WXK_F1, GTerm::KEY_F1 },
+  { WXK_F2, GTerm::KEY_F2 },
+  { WXK_F3, GTerm::KEY_F3 },
+  { WXK_F4, GTerm::KEY_F4 },
+  { WXK_F5, GTerm::KEY_F5 },
+  { WXK_F6, GTerm::KEY_F6 },
+  { WXK_F7, GTerm::KEY_F7 },
+  { WXK_F8, GTerm::KEY_F8 },
+  { WXK_F9, GTerm::KEY_F9 },
+  { WXK_F10, GTerm::KEY_F10 },
+  { WXK_F11, GTerm::KEY_F11 },
+  { WXK_F12, GTerm::KEY_F12 },
+  { (wxKeyCode)0, GTerm::KEY_NULL }
 };
 
 static unsigned char
@@ -506,8 +506,7 @@ wxTerm::~wxTerm()
 void
 wxTerm::SetBoldStyle(wxTerm::BOLDSTYLE boldStyle)
 {
-  wxColour
-    colors[16];
+//  wxColour colors[16];
 
   if(boldStyle == DEFAULT)
     boldStyle = COLOR;
@@ -1239,7 +1238,7 @@ wxTerm::SelectAll()
 }
 
 /*
-**  GTelnet stuff
+**  GTerm stuff
 */
 //////////////////////////////////////////////////////////////////////////////
 ///  public virtual DrawText
@@ -1589,7 +1588,7 @@ wxTerm::ModeChange(int state)
 {
   ClearSelection();
 
-  if(state & GTelnet::PC)
+  if(state & GTerm::PC)
   {
     m_colors = m_pc_colors;
     m_colorPens = m_pc_colorPens;
