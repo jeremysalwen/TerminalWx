@@ -40,12 +40,6 @@
     #pragma hdrstop
 #endif
 
-// for all others, include the necessary headers (this file is usually all you
-// need because it includes almost all "standard" wxWindows headers
-#ifndef WX_PRECOMP
-    #include "wx/wx.h"
-#endif
-
 #include <wx/timer.h>
 #include <wx/event.h>
 #include <wx/bitmap.h>
@@ -60,7 +54,6 @@
 #include <ctype.h>
 
 #include "gterm.hpp"
-//#include "GTerm.hpp"
 #include "wxterm.h"
 
 
@@ -1782,6 +1775,9 @@ wxTerm::RequestSizeChange(int w, int h)
 ///  @param  data unsigned char * The received text
 ///
 ///  @return void
+///
+///  @remarks This function is *not* safe to call from anywhere but
+///  @remarks the main wxwidgets event loop, as it draws
 ///
 ///  @author Derry Bryson @date 04-22-2004
 //////////////////////////////////////////////////////////////////////////////
