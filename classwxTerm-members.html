@@ -48,10 +48,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="headertitle">
-<h1>TerminalWx Member List</h1>  </div>
+<h1>wxTerm Member List</h1>  </div>
 </div>
 <div class="contents">
-This is the complete list of members for <a class="el" href="classTerminalWx.html">TerminalWx</a>, including all inherited members.<table>
+This is the complete list of members for <a class="el" href="classwxTerm.html">wxTerm</a>, including all inherited members.<table>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a6abde2ae559904f452d513517ec6f4e1">Bell</a>()</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>BLINK</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>BOLD</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
@@ -67,8 +67,6 @@ This is the complete list of members for <a class="el" href="classTerminalWx.htm
   <tr bgcolor="#f0f0f0"><td><b>DEFAULT</b> enum value (defined in <a class="el" href="classwxTerm.html">wxTerm</a>)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>DEFERUPDATE</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>DESTRUCTBS</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTerminalWx.html#a8e33bb1d323614b00ed9050e854fd84d">DisplayChars</a>(const wxString &amp;text)</td><td><a class="el" href="classTerminalWx.html">TerminalWx</a></td><td><code> [virtual]</code></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTerminalWx.html#af006f9d4cb1f1ae1a2aebc4a9df1dc6e">DisplayCharsUnsafe</a>(const wxString &amp;text)</td><td><a class="el" href="classTerminalWx.html">TerminalWx</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#ab89258688c9c882b3d77578c17be56ec">DrawCursor</a>(int fg_color, int bg_color, int flags, int x, int y, unsigned char c)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a47a429b93bdec2d70a9c04f31067bdad">DrawText</a>(int fg_color, int bg_color, int flags, int x, int y, int len, unsigned char *string)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
   <tr class="memlist"><td><a class="el" href="classGTerm.html#aad303b04bc87d165b46c6352b3c48643">ExposeArea</a>(int x, int y, int w, int h)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td><code> [virtual]</code></td></tr>
@@ -167,7 +165,6 @@ This is the complete list of members for <a class="el" href="classTerminalWx.htm
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a923aa542aa59f37a028fe87a0ed0ca10">MoveChars</a>(int sx, int sy, int dx, int dy, int w, int h)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>NEWLINE</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>NOEOLWRAP</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTerminalWx.html#ad668214dcfad9a9e0bb9b5e40eca032b">OnUserInput</a>(wxString)</td><td><a class="el" href="classTerminalWx.html">TerminalWx</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>OVERSTRIKE</b> enum value (defined in <a class="el" href="classwxTerm.html">wxTerm</a>)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>PC</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a705825399c3deae16e03a6c2770c6139">PrintChars</a>(int len, unsigned char *data)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
@@ -182,6 +179,8 @@ This is the complete list of members for <a class="el" href="classTerminalWx.htm
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a1a1e3bda0832ccdceb45ffcbf16dc9ca">SelectAll</a>()</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>SELECTED</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a7f663cef4d78d41f714e4aab9e28874c">SelectPrinter</a>(char *PrinterName)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>SendBack</b>(int len, char *data) (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td><code> [inline, virtual]</code></td></tr>
+  <tr bgcolor="#f0f0f0"><td><b>SendBack</b>(char *data) (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td><code> [inline, virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>set_mode_flag</b>(int flag) (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a771da2addc899077fb25e1d97147931e">SetBoldStyle</a>(wxTerm::BOLDSTYLE boldStyle)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#ad4ef017619f8286f73d3035cb061789c">SetCursorBlinkRate</a>(int rate)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
@@ -191,7 +190,6 @@ This is the complete list of members for <a class="el" href="classTerminalWx.htm
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#ad0cd30aa4d46b351921d3179fe9c65d2">SetPCColors</a>(wxColour colors[16])</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>SetTerminalHistory</b>(int size) (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr class="memlist"><td><a class="el" href="classwxTerm.html#a4d659eed788a243100266121604a4fc0">SetVTColors</a>(wxColour colors[16])</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
-  <tr class="memlist"><td><a class="el" href="classTerminalWx.html#ae1bfd0e82048b9446ed65ac7126ec14e">TerminalWx</a>(wxWindow *parent, wxWindowID id, const wxPoint &amp;pos=wxDefaultPosition, int width=80, int height=24, const wxString &amp;name=&quot;TerminalWx&quot;)</td><td><a class="el" href="classTerminalWx.html">TerminalWx</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>TEXTONLY</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>TranslateKeyCode</b>(int keycode, int *len, char *data, int shift=0, int ctrl=0, int alt=0) (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>UNDERLINE</b> enum value (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td></td></tr>
@@ -201,7 +199,6 @@ This is the complete list of members for <a class="el" href="classTerminalWx.htm
   <tr bgcolor="#f0f0f0"><td><b>Width</b>() (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>wxTerm</b>(wxWindow *parent, wxWindowID id, const wxPoint &amp;pos=wxDefaultPosition, int width=80, int height=24, const wxString &amp;name=&quot;wxTerm&quot;) (defined in <a class="el" href="classwxTerm.html">wxTerm</a>)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~GTerm</b>() (defined in <a class="el" href="classGTerm.html">GTerm</a>)</td><td><a class="el" href="classGTerm.html">GTerm</a></td><td><code> [virtual]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>~TerminalWx</b>() (defined in <a class="el" href="classTerminalWx.html">TerminalWx</a>)</td><td><a class="el" href="classTerminalWx.html">TerminalWx</a></td><td><code> [virtual]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~wxTerm</b>() (defined in <a class="el" href="classwxTerm.html">wxTerm</a>)</td><td><a class="el" href="classwxTerm.html">wxTerm</a></td><td><code> [virtual]</code></td></tr>
 </table></div>
 <!--- window showing the filter options -->

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
-<title>TerminalWx: TerminalInputEvent Class Reference</title>
+<title>TerminalWx: StateOption Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javaScript" src="search/search.js"></script>
@@ -48,30 +48,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-attribs">Public Attributes</a>  </div>
   <div class="headertitle">
-<h1>TerminalInputEvent Class Reference</h1>  </div>
+<h1>StateOption Struct Reference</h1>  </div>
 </div>
 <div class="contents">
-<!-- doxytag: class="TerminalInputEvent" -->
-<p><a href="classTerminalInputEvent-members.html">List of all members.</a></p>
+<!-- doxytag: class="StateOption" -->
+<p><a href="structStateOption-members.html">List of all members.</a></p>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a99313134ede5dea8bc34821ffafebf5d"></a><!-- doxytag: member="TerminalInputEvent::TerminalInputEvent" ref="a99313134ede5dea8bc34821ffafebf5d" args="(wxString str)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>TerminalInputEvent</b> (wxString str)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa3d578f835f1a0343964989f2c45af5f"></a><!-- doxytag: member="TerminalInputEvent::TerminalInputEvent" ref="aa3d578f835f1a0343964989f2c45af5f" args="(const TerminalInputEvent &amp;event)" -->
-&nbsp;</td><td class="memItemRight" valign="bottom"><b>TerminalInputEvent</b> (const <a class="el" href="classTerminalInputEvent.html">TerminalInputEvent</a> &amp;event)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4493c6934e960ff07e78986fefa7e344"></a><!-- doxytag: member="TerminalInputEvent::SetString" ref="a4493c6934e960ff07e78986fefa7e344" args="(wxString s)" -->
-void&nbsp;</td><td class="memItemRight" valign="bottom"><b>SetString</b> (wxString s)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae063c8421d0594489cabc718499972eb"></a><!-- doxytag: member="TerminalInputEvent::GetString" ref="ae063c8421d0594489cabc718499972eb" args="() const " -->
-wxString&nbsp;</td><td class="memItemRight" valign="bottom"><b>GetString</b> () const </td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8f907e26d43ecf82b993233f37ac3c37"></a><!-- doxytag: member="TerminalInputEvent::Clone" ref="a8f907e26d43ecf82b993233f37ac3c37" args="() const " -->
-virtual wxEvent *&nbsp;</td><td class="memItemRight" valign="bottom"><b>Clone</b> () const </td></tr>
+<tr><td colspan="2"><h2><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5237332fe7638b73094690e6d077358c"></a><!-- doxytag: member="StateOption::byte" ref="a5237332fe7638b73094690e6d077358c" args="" -->
+int&nbsp;</td><td class="memItemRight" valign="bottom"><b>byte</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af1e9d30e9883afb9437e200054e2a052"></a><!-- doxytag: member="StateOption::action" ref="af1e9d30e9883afb9437e200054e2a052" args="" -->
+StateFunc&nbsp;</td><td class="memItemRight" valign="bottom"><b>action</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac2e9d9c86b605154400bcd509f802def"></a><!-- doxytag: member="StateOption::next_state" ref="ac2e9d9c86b605154400bcd509f802def" args="" -->
+<a class="el" href="structStateOption.html">StateOption</a> *&nbsp;</td><td class="memItemRight" valign="bottom"><b>next_state</b></td></tr>
 </table>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="terminalinputevent_8h_source.html">terminalinputevent.h</a></li>
-<li>src/terminalinputevent.cpp</li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>src/GTerm/<a class="el" href="gterm_8hpp_source.html">gterm.hpp</a></li>
 </ul>
 </div>
 <!--- window showing the filter options -->
