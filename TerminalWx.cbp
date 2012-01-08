@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/TerminalWx" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/TestApp" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -17,7 +17,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/TerminalWx" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/TestApp" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="0" />
 				<Option compiler="gcc" />
@@ -37,11 +37,26 @@
 		<Linker>
 			<Add option="`wx-config --libs`" />
 		</Linker>
-		<Unit filename="TerminalWxApp.cpp" />
-		<Unit filename="TerminalWxApp.h" />
-		<Unit filename="TerminalWxMain.cpp" />
 		<Unit filename="TerminalWxMain.h" />
-		<Unit filename="wxsmith/TerminalWxframe.wxs" />
+		<Unit filename="TestApp.cpp" />
+		<Unit filename="TestApp.h" />
+		<Unit filename="TestMain.cpp" />
+		<Unit filename="TestMain.h" />
+		<Unit filename="src/GTerm/TextManager.cpp" />
+		<Unit filename="src/GTerm/TextManager.h" />
+		<Unit filename="src/GTerm/actions.cpp" />
+		<Unit filename="src/GTerm/gterm.cpp" />
+		<Unit filename="src/GTerm/gterm.hpp" />
+		<Unit filename="src/GTerm/keytrans.cpp" />
+		<Unit filename="src/GTerm/states.cpp" />
+		<Unit filename="src/GTerm/utils.cpp" />
+		<Unit filename="src/GTerm/vt52_states.cpp" />
+		<Unit filename="src/taTelnet/wxterm.cpp" />
+		<Unit filename="src/taTelnet/wxterm.h" />
+		<Unit filename="src/terminalinputevent.cpp" />
+		<Unit filename="src/terminalinputevent.h" />
+		<Unit filename="src/terminalwx.cpp" />
+		<Unit filename="src/terminalwx.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
