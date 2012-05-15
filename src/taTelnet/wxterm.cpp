@@ -1319,7 +1319,10 @@ wxTerm::DrawText(int fg_color, int bg_color, int flags,
   m_curDC->SetTextForeground(m_colors[fg_color]);
   m_curDC->DrawText(str, x, y);
   if(flags & BOLD && m_boldStyle == OVERSTRIKE)
+  {
+    m_curDC->SetBackgroundMode(wxTRANSPARENT);
     m_curDC->DrawText(str, x + 1, y);
+  }
 }
 
 //////////////////////////////////////////////////////////////////////////////
