@@ -8,5 +8,7 @@ Bryson), which itself took (with modifications) from GTerm (Timothy
 Miller).  So this code has a bit of history ;).  All credit to those 
 before me, the amount I've contributed is relatively nothing.
 
-It is offered under the terms of the GPL version 2, or at your choice, 
-any later version (see gpl-2.0.txt for details on version 2 of the GPL)
+It is offered under the terms of the wxWindows License Version 3.1, 
+which is basically the LGPL version 2+ with an exception for the 
+requirement to distribute the source code with binaries.  (see 
+license3.txt for details of the license).
