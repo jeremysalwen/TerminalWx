@@ -12,3 +12,10 @@ It is offered under the terms of the wxWindows License Version 3.1,
 which is basically the LGPL version 2+ with an exception for the 
 requirement to distribute the source code with binaries.  (see 
 license3.txt for details of the license).
+
+Dependencies
+-----
+
+You will need wxgtk version 2.9 or later.
+You will also need libwxsmith to compile the test application.
+
