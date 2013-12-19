@@ -411,6 +411,8 @@ void GTerm::delete_char()
     {
         shift_text(cursor_y, cursor_x, width - 1, -n);
     }
+    dirty_startx[cursor_y]=cursor_x;
+    dirty_endx[cursor_y]=MAXWIDTH;
 }
 
 void GTerm::set_mode() // h
