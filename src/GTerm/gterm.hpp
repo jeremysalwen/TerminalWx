@@ -15,12 +15,6 @@
 #define MAXWIDTH 200
 #define MAXHEIGHT 100
 
-#ifndef min
-#define min(x,y) ((x)<(y)?(x):(y))
-#endif
-#ifndef max
-#define max(x,y) ((x)<(y)?(y):(x))
-#endif
 
 #define GTERM_PC
 
@@ -37,17 +31,17 @@ struct StateOption {
 class GTerm {
 public:
 	// mode flags
-	enum 
+	enum
         {
-          BOLD=0x1, 
-          BLINK=0x2, 
-          UNDERLINE=0x4, 
+          BOLD=0x1,
+          BLINK=0x2,
+          UNDERLINE=0x4,
           INVERSE=0x8,
-	  NOEOLWRAP=0x10, 
-          CURSORAPPMODE=0x20, 
-          CURSORRELATIVE=0x40, 
-  	  NEWLINE=0x80, 
-          INSERT=0x100, 
+	  NOEOLWRAP=0x10,
+          CURSORAPPMODE=0x20,
+          CURSORRELATIVE=0x40,
+  	  NEWLINE=0x80,
+          INSERT=0x100,
           KEYAPPMODE=0x200,
 	  DEFERUPDATE=0x400,
           DESTRUCTBS=0x800,
@@ -157,35 +151,35 @@ private:
         {
           int
             keyCode;
-            
+
           char
             *seq;
         } VTKeySeq;
-        
+
         static VTKeySeq cursor_keys[];
         static VTKeySeq cursor_app_keys[];
         static VTKeySeq keypad_keys[];
         static VTKeySeq keypad_app_keys[];
         static VTKeySeq other_keys[];
-        
-#ifdef GTERM_PC        
+
+#ifdef GTERM_PC
         typedef struct
         {
           int
             keyCode;
-            
+
           unsigned short
             normSeq,
             shiftSeq,
             ctrlSeq,
             altSeq;
         } PCKeySeq;
-        
+
         static PCKeySeq pc_keys[];
-#endif // GTERM_PC        
-        
+#endif // GTERM_PC
+
         VTKeySeq *translate_vt_keycode(int keyCode, VTKeySeq *table);
-#ifdef GTERM_PC        
+#ifdef GTERM_PC
         unsigned short translate_pc_keycode(int KeyCode, int shift, int ctrl, int alt);
 #endif // GTERM_PC
 
@@ -234,8 +228,8 @@ private:
         void pc_end(void);
         void pc_cmd(void);
         void pc_arg(void);
-        void pc_data(void);        
-        
+        void pc_data(void);
+
 #endif  // GTERM_PC
 
 	// utility functions

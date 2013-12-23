@@ -37,13 +37,10 @@
 		<Linker>
 			<Add option="`wx-config --libs`" />
 		</Linker>
-		<Unit filename="TerminalWxMain.h" />
 		<Unit filename="TestApp.cpp" />
 		<Unit filename="TestApp.h" />
 		<Unit filename="TestMain.cpp" />
 		<Unit filename="TestMain.h" />
-		<Unit filename="src/GTerm/TextManager.cpp" />
-		<Unit filename="src/GTerm/TextManager.h" />
 		<Unit filename="src/GTerm/actions.cpp" />
 		<Unit filename="src/GTerm/gterm.cpp" />
 		<Unit filename="src/GTerm/gterm.hpp" />

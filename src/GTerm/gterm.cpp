@@ -6,6 +6,9 @@
 #endif
 
 #include "gterm.hpp"
+#include <algorithm>
+
+using namespace std;
 
 void GTerm::Update()
 {
@@ -22,15 +25,15 @@ void GTerm::ProcessInput(int len, unsigned char *data)
 	input_data = data;
 
 	while (data_len) {
-//printf("ProcessInput() processing %d...\n", *input_data);        
+//printf("ProcessInput() processing %d...\n", *input_data);
 		i = 0;
-		while (current_state[i].byte != -1 && 
+		while (current_state[i].byte != -1 &&
 		       current_state[i].byte != *input_data) i++;
 
 		// action must be allowed to redirect state change
 		last_state = current_state+i;
 		current_state = last_state->next_state;
-		if (last_state->action) 
+		if (last_state->action)
 			(this->*(last_state->action))();
 		input_data++;
 		data_len--;
