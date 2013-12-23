@@ -51,8 +51,7 @@ class wxTerm : public wxWindow, public GTerm
     m_curState,
     m_curBlinkRate;
 
-  int m_scrollBarWidth;
-  int m_charsInLine;
+      int m_charsInLine;
   int m_linesDisplayed;
 
   unsigned char
@@ -63,7 +62,6 @@ class wxTerm : public wxWindow, public GTerm
     m_marking;
 
   bool m_inUpdateSize;
-  bool m_isActive;
 
   wxColour
     m_vt_colors[16],
@@ -195,7 +193,6 @@ private:
   void OnLeftUp(wxMouseEvent& event);
   void OnMouseMove(wxMouseEvent& event);
   void OnTimer(wxTimerEvent& event);
-  void OnActivate(wxActivateEvent &event);
   void OnSize(wxSizeEvent &event);
 
   void OnGainFocus(wxFocusEvent &event);

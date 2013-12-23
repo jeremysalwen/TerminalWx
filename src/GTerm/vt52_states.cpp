@@ -1,20 +1,10 @@
-/*
-TerminalWx - A wxWidgets terminal widget
-Copyright (C) 1999,2004  Timothy Miller
-              2004  Mark Erikson
-              2012-2013 Jeremy Salwen
-
-License: wxWindows License Version 3.1 (See the file license3.txt)
-
-*/
-
 /* GRG: Added a lot of GTerm:: prefixes to correctly form pointers
  *   to functions in all the tables. Example: &cr -> &GTerm::cr
  */
 
+// Copyright Timothy Miller, 1999
 
 #include "gterm.hpp"
-
 
 // I'm certain that this set is incomplete, but I got these from reverse-
 // engineering a VT100 verification test program.

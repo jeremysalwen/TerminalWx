@@ -380,9 +380,6 @@ wxTerm::wxTerm(wxWindow* parent, wxWindowID id,
     i;
 
   m_inUpdateSize = false;
-  m_isActive = false;
-  m_scrollBarWidth = wxSystemSettings::GetMetric(wxSYS_VSCROLL_ARROW_X);
-
   m_init = 1;
 
   m_curDC = 0;
@@ -801,14 +798,6 @@ wxTerm::OnChar(wxKeyEvent& event)
     event.Skip();
   else
   {
-	  // if the user is scrolled up and they typed something, scroll
-	  // all the way to the bottom
-	  if(GTerm::IsScrolledUp())
-	  {
-		  GTerm::Scroll(MAXHEIGHT, false);
-		  GTerm::Update();
-		  Refresh();
-	  }
 
     int
       rc,
@@ -950,13 +939,13 @@ void
 wxTerm::OnLeftDown(wxMouseEvent& event)
 {
 	SetFocus();
-/*
+
   ClearSelection();
   m_selx1 = m_selx2 = event.GetX() / m_charWidth;
   m_sely1 = m_sely2 = event.GetY() / m_charHeight;
   m_selecting = TRUE;
   CaptureMouse();
-*/
+
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -972,13 +961,12 @@ wxTerm::OnLeftDown(wxMouseEvent& event)
 void
 wxTerm::OnLeftUp(wxMouseEvent& event)
 {
-/*
+
   m_selecting = FALSE;
   if(GetCapture() == this)
   {
 	ReleaseMouse();
   }
-*/
 
 }
 
@@ -1323,10 +1311,6 @@ void
 wxTerm::DoDrawCursor(int fg_color, int bg_color, int flags,
                    int x, int y, unsigned char c)
 {
-	if(GTerm::IsScrolledUp())
-	{
-		return;
-	}
 
   if(flags & BOLD && m_boldStyle == COLOR)
     fg_color = (fg_color % 8) + 8;
@@ -1523,8 +1507,8 @@ wxTerm::MoveChars(int sx, int sy, int dx, int dy, int w, int h)
 void
 wxTerm::ClearChars(int bg_color, int x, int y, int w, int h)
 {
-//  if(!m_marking)
-//    ClearSelection();
+  if(!m_marking)
+    ClearSelection();
 
   x = x * m_charWidth;
   y = y * m_charHeight;
@@ -1885,20 +1869,6 @@ wxTerm::PrintChars(int len, unsigned char *data)
   }
 }
 
-//////////////////////////////////////////////////////////////////////////////
-///  private OnActivate
-///  Sets the terminal's active state - determines whether or not to draw the cursor
-///
-///  @param  event wxActivateEvent & The generated activate event
-///
-///  @return void
-///
-///  @author Mark Erikson @date 04-22-2004
-//////////////////////////////////////////////////////////////////////////////
-void wxTerm::OnActivate(wxActivateEvent &event)
-{
-	m_isActive = event.GetActive();
-}
 
 //////////////////////////////////////////////////////////////////////////////
 ///  private OnGainFocus
@@ -1932,24 +1902,6 @@ void wxTerm::OnLoseFocus(wxFocusEvent &event)
 	this->set_mode_flag(CURSORINVISIBLE);
 	wxLogDebug("TerminalWx Lost focus");
 	GTerm::Update();
-}
-
-//////////////////////////////////////////////////////////////////////////////
-///  public ScrollTerminal
-///  Scrolls the terminal text
-///
-///  @param  numLines int   The number of lines to scroll
-///  @param  scrollUp bool  [=true] True to scroll up, false to scroll down
-///
-///  @return void
-///
-///  @author Mark Erikson @date 04-22-2004
-//////////////////////////////////////////////////////////////////////////////
-void wxTerm::ScrollTerminal(int numLines, bool scrollUp /* = true */)
-{
-	GTerm::Scroll(numLines, scrollUp);
-	Refresh();
-
 }
 
 //////////////////////////////////////////////////////////////////////////////
