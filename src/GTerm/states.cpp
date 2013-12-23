@@ -1,8 +1,17 @@
+/*
+TerminalWx - A wxWidgets terminal widget
+Copyright (C) 1999  Timothy Miller
+              2004  Mark Erikson
+              2012-2013 Jeremy Salwen
+
+License: wxWindows License Version 3.1 (See the file license3.txt)
+
+*/
+
+
 /* GRG: Added a lot of GTerm:: prefixes to correctly form pointers
  *   to functions in all the tables. Example: &cr -> &GTerm::cr
  */
-
-// Copyright Timothy Miller, 1999
 
 #include "gterm.hpp"
 
@@ -33,11 +42,11 @@ StateOption GTerm::esc_state[] = {
 	{ '#', 0,		hash_state },
 #ifdef GTERM_PC
         { '!', &GTerm::pc_begin,       pc_cmd_state },
-#endif        
+#endif
 
     { 13, &GTerm::cr,      esc_state },    // standard VT100 wants
     { 10, &GTerm::lf,      esc_state },    // cursor controls in
-    { 12, &GTerm::ff,      esc_state },    // the middle of ESC 
+    { 12, &GTerm::ff,      esc_state },    // the middle of ESC
     { 9,  &GTerm::tab,     esc_state },    // sequences
     { 8,  &GTerm::bs,      esc_state },
     { 7,  &GTerm::bell,        esc_state },
@@ -103,7 +112,7 @@ StateOption GTerm::bracket_state[] = {
 
     { 13, &GTerm::cr,      bracket_state },// standard VT100 wants
     { 10, &GTerm::lf,      bracket_state },// cursor controls in
-    { 12, &GTerm::ff,      bracket_state },// the middle of ESC 
+    { 12, &GTerm::ff,      bracket_state },// the middle of ESC
     { 9,  &GTerm::tab,     bracket_state },// sequences
     { 8,  &GTerm::bs,      bracket_state },
     { 7,  &GTerm::bell,        bracket_state },
